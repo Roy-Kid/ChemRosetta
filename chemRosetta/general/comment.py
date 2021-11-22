@@ -3,13 +3,12 @@
 # date: 2021-11-21
 # version: 0.0.1
 
-from chemRosseta.command import Command
+from chemRosetta.command import Command, dataclass
 
+@dataclass
 class comment(Command):
     
-    def __init__(self, comment) -> None:
-        super().__init__()
-        self.comment = comment
+    comment: str
         
     def toLAMMPS(self):
         return '# ' + self.comment
